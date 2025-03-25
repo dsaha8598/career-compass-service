@@ -9,6 +9,13 @@ public class RequestBodyTest implements Serializable {
     private Integer age;
     private Boolean ismarried;
 
+    public RequestBodyTest(String name, String dob, Integer age, Boolean ismarried) {
+        this.name = name;
+        this.dob = dob;
+        this.age = age;
+        this.ismarried =  ismarried;
+    }
+
     public void setIsmarried(Boolean ismarried) {
         this.ismarried = ismarried;
     }
