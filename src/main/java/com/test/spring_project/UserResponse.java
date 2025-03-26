@@ -1,19 +1,26 @@
 package com.test.spring_project;
 
-public class UserResponse {
+import java.io.Serializable;
+
+public class UserResponse implements Serializable {
 
     private String name;
+    private String dob;
     private int age;
     private boolean isMarrage;
 
-    public UserResponse(String name, int age, boolean isMarrage) {
+    public UserResponse(String name,String dob, int age, boolean isMarrage) {
         this.name = name;
+        this.dob=dob;
         this.age = age;
         this.isMarrage = isMarrage;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
     public void setAge(int age) {
@@ -26,6 +33,9 @@ public class UserResponse {
 
     public String getName() {
         return name;
+    }
+    public String getDob() {
+        return dob;
     }
 
     public int getAge() {
