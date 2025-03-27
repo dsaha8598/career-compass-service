@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@CrossOrigin("http://localhost:3000")
 @RestController()
 @RequestMapping(value ="/flipkart")
 public class TestController2 {
@@ -17,6 +17,9 @@ public class TestController2 {
      */
     @Autowired
     private TestService testService;
+
+    @Autowired
+    private UserRepository userRepository;
 
     //pathvariable
     //pathparam
@@ -46,6 +49,38 @@ public class TestController2 {
     public List<RequestBodyTest> getAllRequestBodies(){
         return testService.getAll();
     }
+
+    @GetMapping("/save")
+    public User saveUserDetails(){
+        User user = new User();
+        user.setAge(27);
+        user.setEmail("xyz@gmail.com");
+        user.setGender("Male");
+        user.setName("Dipak");
+        user.setPh(546879877l);
+        return userRepository.save(user);
+
+    }
+
+    @GetMapping("/getUser")
+    public List<User> getUserDetails(){
+        return userRepository.findAll();
+
+    }
+
+   // http://localhost:8081/flipkart/user/2
+    @GetMapping("/user/{id}")
+    public User getUserById(@PathVariable Integer id){
+       return userRepository.findById(id).get();
+    }
+
+    @PostMapping("/save-version-2")
+    public User saveUserDetails(@RequestBody User user){
+
+        return userRepository.save(user);
+    }
+
+
 
 
 
