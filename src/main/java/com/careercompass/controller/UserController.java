@@ -19,6 +19,7 @@ public class UserController {
     public User saveUser(){
         User user = new User();
         user.setUserId("15485-dipak");
+        //testing
         return userRepository.save(user);
     }
 }
