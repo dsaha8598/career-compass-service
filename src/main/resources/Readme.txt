@@ -10,6 +10,7 @@ http://localhost:8081/flipkart/user/2
 http://localhost:8081/flipkart/save
 http://localhost:8081/flipkart/getUser
 http://localhost:8081/h2-console --> DB console url
+http://localhost:8081/flipkart/getUserByGender?gender=male&age=25
 
 
 

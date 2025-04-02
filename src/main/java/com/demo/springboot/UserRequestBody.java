@@ -1,29 +1,12 @@
 package com.demo.springboot;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+public class UserRequestBody {
 
-import javax.annotation.processing.Generated;
-
-@Entity(name = "user-details")
-public class User {
-
-    @Id
-    @GeneratedValue
-    private Integer id;
-    @Column(name = "user_name")
     private String name;
     private String email;
     private Long ph;
     private String gender;
-    @Column(name = "user_age")
     private Integer age;
-
-    public Integer getId() {
-        return id;
-    }
 
     public String getName() {
         return name;
@@ -41,14 +24,6 @@ public class User {
         return gender;
     }
 
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -61,11 +36,14 @@ public class User {
         this.ph = ph;
     }
 
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
     public void setAge(Integer age) {
         this.age = age;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public Integer getAge() {
+        return age;
     }
 }

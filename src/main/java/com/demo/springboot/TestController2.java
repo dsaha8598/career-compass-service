@@ -64,7 +64,7 @@ public class TestController2 {
 
     @GetMapping("/getUser")
     public List<User> getUserDetails(){
-        return userRepository.findAll();
+        return testService.getAllUser();
 
     }
 
@@ -75,11 +75,21 @@ public class TestController2 {
     }
 
     @PostMapping("/save-version-2")
-    public User saveUserDetails(@RequestBody User user){
-
+    public User saveUserDetails(@RequestBody UserRequestBody userRequestBody){
+         User user = new User();
+         user.setName(userRequestBody.getName());
+         user.setPh(userRequestBody.getPh());
+         user.setGender(userRequestBody.getGender());
+         user.setEmail(userRequestBody.getEmail());
+         user.setAge(userRequestBody.getAge());
         return userRepository.save(user);
     }
 
+    @GetMapping("/getUserByGender")
+    public List<User> getUserByGender(@RequestParam String gender, @RequestParam Integer age){
+        List<User> list = testService.findListOfUsersByGender(gender, age);
+        return list;
+    }
 
 
 
