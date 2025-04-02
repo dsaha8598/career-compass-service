@@ -1,13 +1,13 @@
-package com.demo.springboot;
+package com.careercompass;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DemoSpringbootProjectApplication {
+public class CareerCompassServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoSpringbootProjectApplication.class, args);
+		SpringApplication.run(CareerCompassServiceApplication.class, args);
 	}
 
 }

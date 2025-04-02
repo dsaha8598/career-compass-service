@@ -1,0 +1,9 @@
+server:
+  port: 8181
+spring:
+  application:
+    name: career-compass-service
+  data:
+    mongodb:
+      database: Career_Compass
+      uri: mongodb+srv://dsaha0271:8598022970@dipakmongocliuster.3jprv.mongodb.net/?retryWrites=true&w=majority&appName=DIPAKMONGOCLIUSTER
