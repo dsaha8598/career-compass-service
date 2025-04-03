@@ -4,6 +4,7 @@ import com.careercompass.dao.UserRepository;
 import com.careercompass.dao.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,11 +16,9 @@ public class UserController {
 
     @Autowired
     private UserRepository userRepository;
-    @GetMapping
+    @GetMapping("/save")
     public User saveUser(){
-        User user = new User();
-        user.setUserId("15485-dipak");
-        //testing
-        return userRepository.save(user);
+
+       return userRepository.getuserbyemail("abc@gmail.com");
     }
 }

@@ -9,9 +9,13 @@ import java.io.Serializable;
 import static com.careercompass.constants.CareerCompassConstants.USER_COLLECTION;
 
 @Data
-@Document(collation = USER_COLLECTION)
+@Document(collection = USER_COLLECTION)
 public class User implements Serializable {
 
     @Id
     private String userId;
+    private String email;
+    private String name;
+    private String password;
+    private Long phoneNumber;
 }
