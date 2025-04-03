@@ -7,13 +7,13 @@ public class UserResponse implements Serializable {
     private String name;
     private String dob;
     private int age;
-    private boolean isMarrage;
+    private boolean isMarried;
 
-    public UserResponse(String name,String dob, int age, boolean isMarrage) {
+    public UserResponse(String name,String dob, int age, boolean isMarried) {
         this.name = name;
         this.dob=dob;
         this.age = age;
-        this.isMarrage = isMarrage;
+        this.isMarried = isMarried;
     }
 
     public void setName(String name) {
@@ -27,8 +27,8 @@ public class UserResponse implements Serializable {
         this.age = age;
     }
 
-    public void setMarrage(boolean marrage) {
-        isMarrage = marrage;
+    public void setisMarried(boolean isMarried) {
+        this.isMarried = isMarried;
     }
 
     public String getName() {
@@ -42,8 +42,8 @@ public class UserResponse implements Serializable {
         return age;
     }
 
-    public boolean isMarrage() {
-        return isMarrage;
+    public boolean getisMarrage() {
+        return isMarried;
     }
 
 
