@@ -7,3 +7,16 @@ spring:
     mongodb:
       database: Career_Compass
       uri: mongodb+srv://dsaha0271:8598022970@dipakmongocliuster.3jprv.mongodb.net/?retryWrites=true&w=majority&appName=DIPAKMONGOCLIUSTER
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: career.compass48@gmail.com
+    password: asnc vpdw yzbl nele
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+
