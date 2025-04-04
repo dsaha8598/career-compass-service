@@ -7,7 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CareerCompassServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CareerCompassServiceApplication.class, args);
-	}
 
+		SpringApplication.run(CareerCompassServiceApplication.class, args);
+
+	}
 }

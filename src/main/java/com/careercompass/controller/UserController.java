@@ -5,10 +5,13 @@ import com.careercompass.dao.entity.User;
 import com.careercompass.model.response.UserResponse;
 import com.careercompass.service.EmailService;
 import com.careercompass.service.OtpService;
+import com.careercompass.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.*;
+
 
 import static com.careercompass.constants.CareerCompassConstants.USER_ROOT_URL;
 
@@ -17,10 +20,16 @@ import static com.careercompass.constants.CareerCompassConstants.USER_ROOT_URL;
 public class UserController {
 
     @Autowired
+    private UserService userService;
+    @Autowired
     private UserRepository userRepository;
     @Autowired
     private OtpService otpService;
 
+    @GetMapping("/save")
+    public User saveUser(){
+       return userRepository.getUserEmail("abc@gmail.com");
+    }
 
     @GetMapping("/send/otp")
     public UserResponse sendOtp(@RequestParam String email){
@@ -32,4 +41,13 @@ public class UserController {
     public UserResponse sendOtp(@PathVariable String otp, @PathVariable String email){
         return new UserResponse(otpService.validateOtp(email,otp));
     }
+@PostMapping("/register")
+public User registerUser(@RequestBody User user) {
+
+    User result = userService.saveUserRegister(user.getName(),user.getEmail(),user.getPhone(),user.getPassword());
+
+    return result;
+ }
+
+
 }
