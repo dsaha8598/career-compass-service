@@ -2,11 +2,11 @@ package com.careercompass.model.requestbody;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class UserSignUpRequest {
+public class LoginRequest implements Serializable {
+
     private String email;
-    private String name;
     private String password;
-    private Long phone;
-    private String gender;
 }
