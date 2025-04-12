@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 import static com.careercompass.constants.CareerCompassConstants.USER_ROOT_URL;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(USER_ROOT_URL)
+@RequestMapping("/careerCompass/profile")
 public class UserProfileController {
 
     @Autowired
