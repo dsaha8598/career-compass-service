@@ -12,7 +12,7 @@ import java.util.List;
 @Repository
 public interface QualificationRepository extends MongoRepository<Qualification,String> {
 
-    @Query ("{ \"stream\":?1}")
+    @Query ("{ \"stream\":?0}")
    public List<Qualification> findByQualificationName(String stream);
 
 

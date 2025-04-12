@@ -18,15 +18,15 @@ public class UserProfileController {
     private UserQualificationService userQualificationService;
 
     @GetMapping("/getAll")
-    public List<Qualification> AllQualificationList(){
+    public List<String> AllQualificationList(){
 
         return userQualificationService.getAllStream();
     }
 
     @GetMapping("/listbyname/{stream}")
-        public List<Qualification> QualificationList(@RequestParam String stream){
+        public List<Qualification> QualificationList(@PathVariable String stream){
 
-        List<Qualification> result=userQualificationService.UserQualificationByName(stream);
+        List<Qualification> result=userQualificationService.userQualificationByName(stream);
         return result;
     }
 

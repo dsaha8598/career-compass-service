@@ -14,18 +14,17 @@ public class UserQualificationService {
     private QualificationRepository qualificationRepository;
 
 
-    public List<Qualification> getAllStream(){
-        return qualificationRepository.findAll();
+    public List<String> getAllStream(){
+         List<Qualification> result=qualificationRepository.findAll();
+         List<String> q=new ArrayList<>();
+           result.forEach(qualification -> {
+                q.add(qualification.getStream());
+           });
+        return q ;
     }
 
-    public List<Qualification> UserQualificationByName(String stream){
+    public List<Qualification> userQualificationByName(String stream){
         List<Qualification> n=qualificationRepository.findByQualificationName(stream);
-        ArrayList<Qualification> nm=new ArrayList<>();
-        for(Qualification q:n){
-            if(q.getStream().equals(stream)){
-                nm.add(q);
-            }
-        }
         return n;
     }
 }
