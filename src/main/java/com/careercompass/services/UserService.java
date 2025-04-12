@@ -4,10 +4,9 @@ import com.careercompass.dao.UserRepository;
 import com.careercompass.dao.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 @Component
-@Service
+
 public class UserService {
     @Autowired
     private UserRepository userRepository;
