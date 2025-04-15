@@ -2,7 +2,7 @@ package com.careercompass.controller;
 
 import com.careercompass.dao.QualificationRepository;
 import com.careercompass.dao.entity.Qualification;
-import com.careercompass.services.UserQualificationService;
+import com.careercompass.service.UserQualificationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

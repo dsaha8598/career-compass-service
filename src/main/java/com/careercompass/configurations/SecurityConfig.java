@@ -42,7 +42,7 @@ public class SecurityConfig {
         return http
                 .cors(cors->cors.configure(http))
                 .csrf(csrf -> csrf.disable()).authorizeHttpRequests(auth ->
-                  auth.requestMatchers("/careerCompass/user/**")
+                  auth.requestMatchers("/careerCompass/user/**","/**")
                           .permitAll()
                           .anyRequest().authenticated()
                 )

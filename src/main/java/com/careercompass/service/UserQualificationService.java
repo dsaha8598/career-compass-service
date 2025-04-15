@@ -1,4 +1,4 @@
-package com.careercompass.services;
+package com.careercompass.service;
 
 import com.careercompass.dao.QualificationRepository;
 import com.careercompass.dao.entity.Qualification;
