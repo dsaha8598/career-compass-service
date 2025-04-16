@@ -1,6 +1,7 @@
 package com.careercompass.dao.entity;
 
 import lombok.Data;
+import lombok.Value;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Service;
@@ -19,4 +20,5 @@ public class User implements Serializable {
     private String name;
     private String password;
     private Long phone;
+    private String value ="qualification";
 }

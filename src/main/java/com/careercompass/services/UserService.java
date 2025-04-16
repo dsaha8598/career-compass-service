@@ -2,6 +2,8 @@ package com.careercompass.services;
 
 import com.careercompass.dao.UserRepository;
 import com.careercompass.dao.entity.User;
+import com.careercompass.model.requestbody.UserSignUpRequest;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -13,28 +15,27 @@ public class UserService {
     private UserRepository userRepository;
 
 
-public User saveUserRegister(String name,String email,Long phone,String password){
-    if (userRepository.getUserEmail(email) != null) {
-
-        return null;
+public User saveUserRegister(UserSignUpRequest userSignUpRequest){
+    if (userRepository.getUserEmail(userSignUpRequest.getEmail())!=null)
+    {
+        throw new RuntimeException("Email already present");
     }
-  User saveAll=new User();
-  saveAll.setName(name);
-  saveAll.setEmail(email);
-  saveAll.setPhone(phone);
-  saveAll.setPassword(password);
+    User user = new User();
+    BeanUtils.copyProperties(userSignUpRequest, user);
 
 
-return userRepository.save(saveAll);
+    return userRepository.save(user);
 }
-public User userlogin(String email,String password){
-    User v=userRepository.getUserEmail(email);
-    if(v==null || !v.getPassword().equals(password)){
 
-        return null;
-    }
+public String getEmailQualification(String email, String value){
 
-    return v;
+    User q=userRepository.getUserEmail(email);
+     if(q!=null){
+         return q.getValue();
+
+     }
+
+    return "Email not found ";
 }
 
 
