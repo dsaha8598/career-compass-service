@@ -7,4 +7,5 @@ public class CareerCompassConstants {
     public static final String OTP_EXPIRED = "OTP Expired";
     public static final String OTP_VALIDATED = "Authentication Successfull";
 
+    public static final String QUALIFICATION_COLLECTION = "qualification";
 }
