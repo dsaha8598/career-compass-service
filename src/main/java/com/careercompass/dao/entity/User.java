@@ -33,6 +33,8 @@ public class User implements Serializable, UserDetails {
     private Set<String> skills;
     @Transient
     private String token;
+    @Transient
+    private String error;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

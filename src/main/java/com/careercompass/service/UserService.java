@@ -37,11 +37,13 @@ public class UserService {
     private JWTService jwtService;
 
     public User saveUserRegister(UserSignUpRequest userSignUpRequest) {
+        User user = new User();
         if (userRepository.getUserByEmail(userSignUpRequest.getEmail(), true) != null) {
-            throw new RuntimeException("Email already present");
+            user.setError("Email is associated with other account");
+            return user;
         }
         String encodedPassword = passwordEncoder.encode(userSignUpRequest.getPassword());
-        User user = new User();
+
         BeanUtils.copyProperties(userSignUpRequest, user);
         user.setEmail(userSignUpRequest.getEmail().toLowerCase());
         user.setPassword(encodedPassword);
